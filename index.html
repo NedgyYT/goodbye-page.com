@@ -12,7 +12,8 @@
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f5f7fa;
+            /* Blue gradient background matching your theme */
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
             color: #333;
             display: flex;
             justify-content: center;
@@ -25,8 +26,8 @@
             padding: 40px;
             max-width: 500px;
             width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
         .icon {
@@ -53,20 +54,23 @@
             font-weight: 600;
             margin-bottom: 8px;
             font-size: 14px;
+            color: #444;
         }
         select, textarea {
             width: 100%;
             padding: 12px;
             border: 1px solid #ccc;
-            border-radius: 6px;
+            border-radius: 8px;
             font-size: 14px;
             font-family: inherit;
             background-color: #fafafa;
+            transition: all 0.2s;
         }
         select:focus, textarea:focus {
             outline: none;
             border-color: #0066cc;
             background-color: #fff;
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
         }
         textarea {
             resize: vertical;
@@ -80,7 +84,7 @@
             padding: 14px;
             font-size: 16px;
             font-weight: 600;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
             transition: background 0.2s;
         }
@@ -98,38 +102,37 @@
 <body>
 
 <div class="container">
-    <div class="icon">😢</div>
-    <h1>We're sorry to see you go</h1>
-    <p>Thank you for trying our extension. Please let us know why you uninstalled it so we can improve the experience.</p>
+    <div class="icon">💙</div>
+    <h1>Sorry to see you go!</h1>
+    <p>Thank you for trying the extension. Your feedback helps make it better.</p>
 
     <form id="feedbackForm">
         <div class="form-group">
-            <label for="reason">What was the main reason?</label>
+            <label for="reason">Why did you uninstall it?</label>
             <select id="reason" required>
                 <option value="" disabled selected>Select a reason...</option>
-                <option value="broken-sites">It broke some websites (like YouTube)</option>
-                <option value="too-bright">The colors were too bright/distracting</option>
-                <option value="not-needed">I don't need it anymore</option>
+                <option value="broken-sites">It broke pages (like YouTube)</option>
+                <option value="too-bright">The blue color was too intense</option>
+                <option value="not-needed">I just wanted to test it</option>
                 <option value="other">Other reason</option>
             </select>
         </div>
 
         <div class="form-group">
-            <label for="details">Can you share more details? (Optional)</label>
-            <textarea id="details" placeholder="What can we do better?"></textarea>
+            <label for="details">Any specific bugs or suggestions? (Optional)</label>
+            <textarea id="details" placeholder="Let us know..."></textarea>
         </div>
 
         <button type="submit">Submit Feedback</button>
     </form>
     
-    <p class="footer-text">Your privacy matters. No personal data is stored.</p>
+    <p class="footer-text">This page is hosted securely on GitHub Pages.</p>
 </div>
 
 <script>
     document.getElementById('feedbackForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        alert('Thank you for your feedback! Your input helps us build better tools.');
-        // Optional: If you use a free form service like Formspree, you can send the data here.
+        alert('Thank you! Your feedback has been simulated.');
     });
 </script>
 
